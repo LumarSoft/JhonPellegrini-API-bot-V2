@@ -55,7 +55,6 @@ const main = async () => {
       console.log(number);
 
       try {
-        await bot.sendMessage(number, "Te meti a la blacklist", {});
         bot.blacklist.add(number);
         res.end("Numero agregado a la blacklist");
       } catch (error) {
@@ -65,7 +64,7 @@ const main = async () => {
       setTimeout(() => {
         console.log("Saque a ", number, " de la blacklist");
         bot.blacklist.remove(number);
-      }, 10000);
+      }, 1800000 );
     })
   );
 
