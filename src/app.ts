@@ -5,7 +5,7 @@ import { Contact } from "./types/contact";
 import { allFlows } from "./allFlows";
 import cors from "cors";
 
-const PORT = process.env.PORT ?? 3002;
+const PORT = process.env.PORT ?? 3008;
 
 const main = async () => {
   const adapterFlow = createFlow(allFlows);
