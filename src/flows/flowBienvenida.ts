@@ -51,9 +51,6 @@ export const flowBienvenida = addKeyword(EVENTS.WELCOME).addAction(
 
     const message = ctx.body;
 
-    // if (message.length === 9) {
-    //   return gotoFlow(blacklistGeneratorFlow);
-    // }
     if (message.toLowerCase() === "ef") {
       return gotoFlow(flowRechazoRapipago);
     }
