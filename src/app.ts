@@ -55,6 +55,11 @@ const main = async () => {
       console.log(number);
 
       try {
+        await bot.sendMessage(
+          number,
+          "Hola! Me comunico como asesor de parte de JPMG...",
+          {}
+        );
         bot.blacklist.add(number);
         res.end("Numero agregado a la blacklist");
       } catch (error) {
@@ -64,7 +69,7 @@ const main = async () => {
       setTimeout(() => {
         console.log("Saque a ", number, " de la blacklist");
         bot.blacklist.remove(number);
-      }, 1800000 );
+      }, 1800000);
     })
   );
 
