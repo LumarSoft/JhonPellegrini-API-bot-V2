@@ -15,8 +15,6 @@ export const blackListFlow = addKeyword(EVENTS.ACTION).addAction(
     } else {
       return endFlow("Gracias por comunicarte con nosotros.");
     }
-
-    // Iniciar temporizador para eliminar usuario de la blacklist después de 30 minutos
   }
 );
 
