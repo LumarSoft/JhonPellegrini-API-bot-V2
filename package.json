@@ -15,7 +15,8 @@
     "@builderbot/bot": "1.1.5",
     "@builderbot/provider-baileys": "1.1.5",
     "@types/cors": "^2.8.17",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
