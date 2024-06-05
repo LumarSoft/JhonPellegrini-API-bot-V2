@@ -105,9 +105,9 @@ export const flowNoCliente = addKeyword(EVENTS.ACTION)
         case "1":
           return gotoFlow(flowTipoCotizacionNoCliente);
         case "2":
-          return gotoFlow(flowConsulta);
-        case "3":
           return gotoFlow(flowContactoPendiente);
+        case "3":
+          return gotoFlow(flowConsulta);
         case "0":
           return endFlow("¡Nos vemos luego!");
         default:
