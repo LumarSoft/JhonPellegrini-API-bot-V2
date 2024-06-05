@@ -6,7 +6,7 @@ import { addKeyword, EVENTS } from "@builderbot/bot";
 export const FlowContinuar = addKeyword(EVENTS.ACTION)
   .addAnswer([
     "Perfecto. ¿Necesita realizar algo más?",
-    "👉 *1* - Menú cliente.",
+    "👉 *1* - Volver al menú.",
     "👉 *0* - ¡Nos vemos luego!",
   ])
   .addAction(async (ctx, { gotoFlow }) => start(ctx, gotoFlow, IDLETIME))
@@ -42,7 +42,7 @@ export const flowOtraConsulta = addKeyword(EVENTS.ACTION)
       if (resp.length > 6) {
         globalState.update({ readyForBL: true });
         await flowDynamic(
-          "Perfecto, responderemos tu consulta cuanto antes (cod#1500)"
+          "Perfecto, responderemos tu consulta cuanto antes. (cod#1500)"
         );
         return gotoFlow(FlowContinuar);
       }
