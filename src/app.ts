@@ -32,7 +32,7 @@ const main = async () => {
           const phone = Number("549" + contact["Tel. Celular"]);
           const amount = contact.Importe;
 
-          const message1 = `Hola ${name}, nos comunicamos desde JPMG para informarte que nos llego rechazado el débito automatico de la cuota del seguro. El importe a pagar es de ${amount}. Seleccioná las opciones para gestionar y abonar el mismo dentro de las 48 hs para evitar quedar sin cobertura`;
+          const message1 = `Hola ${name}, nos comunicamos desde JPMG para informarte que nos llego rechazado el débito automático de la cuota del seguro. El importe a pagar es de ${amount}. Seleccioná las opciones para gestionar y abonar el mismo dentro de las 48 hs para evitar quedar sin cobertura`;
           const message2 = `
             👉 *EF* - Envío cupon de pago para abonar en Rapipago, pago fácil o santa fe servicios.
             👉 *TC* - Pago con tarjeta de crédito o débito.

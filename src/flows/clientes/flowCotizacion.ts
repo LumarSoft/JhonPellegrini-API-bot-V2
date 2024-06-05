@@ -5,10 +5,10 @@ import { addKeyword, EVENTS } from "@builderbot/bot";
 
 export const continuacionCotizacion = addKeyword(EVENTS.ACTION)
   .addAnswer([
-    "Desea hacer algo mas?",
+    "¿Desea hacer algo más?",
     "👉 *1* - Menu cotización",
     "👉 *2* - Menu cliente",
-    "👉 *0* - Finalizar conversacion",
+    "👉 *0* - Finalizar conversación",
   ])
   .addAction(async (ctx, { gotoFlow }) => start(ctx, gotoFlow, IDLETIME))
   .addAction({ capture: true }, async (ctx, { gotoFlow, fallBack }) => {
@@ -34,7 +34,7 @@ export const flowCotizarAutomotor = addKeyword(EVENTS.ACTION)
     "👉 *0* - Cancelar",
   ])
   .addAnswer(
-    "*IMPORTANTE:* Porfavor adjunte todos los datos en un solo mensaje"
+    "*IMPORTANTE:* Por favor, adjunte todos los datos en un solo mensaje"
   )
   .addAction(
     { capture: true },
@@ -59,7 +59,7 @@ export const flowCotizarAutomotor = addKeyword(EVENTS.ACTION)
 export const flowCotizarHogar = addKeyword(EVENTS.ACTION)
   .addAnswer(["Aquí se solicitarían los datos del hogar", "👉 *0* - Cancelar"])
   .addAnswer(
-    "*IMPORTANTE:* Porfavor adjunte todos los datos en un solo mensaje"
+    "*IMPORTANTE:* Por favor, adjunte todos los datos en un solo mensaje"
   )
   .addAction(
     { capture: true },
@@ -87,7 +87,7 @@ export const flowCotizarComercio = addKeyword(EVENTS.ACTION)
     "👉 *0* - Cancelar",
   ])
   .addAnswer(
-    "*IMPORTANTE:* Porfavor adjunte todos los datos en un solo mensaje"
+    "*IMPORTANTE:* Por favor, adjunte todos los datos en un solo mensaje"
   )
   .addAction(
     { capture: true },
@@ -112,7 +112,7 @@ export const flowCotizarComercio = addKeyword(EVENTS.ACTION)
 export const flowCotizarAp = addKeyword(EVENTS.ACTION)
   .addAnswer(["Aquí se solicitarían los datos del ap", "👉 *0* - Cancelar"])
   .addAnswer(
-    "*IMPORTANTE:* Porfavor adjunte todos los datos en un solo mensaje"
+    "*IMPORTANTE:* Por favor, adjunte todos los datos en un solo mensaje"
   )
   .addAction(
     { capture: true },
@@ -137,7 +137,7 @@ export const flowCotizarAp = addKeyword(EVENTS.ACTION)
 export const flowCotizarOtrosRiesgos = addKeyword(EVENTS.ACTION)
   .addAnswer(["Aqui iría la cotización de otros riesgos", "👉 *0* - Cancelar"])
   .addAnswer(
-    "*IMPORTANTE:* Porfavor adjunte todos los datos en un solo mensaje"
+    "*IMPORTANTE:* Por favor, adjunte todos los datos en un solo mensaje"
   )
   .addAction(
     { capture: true },
