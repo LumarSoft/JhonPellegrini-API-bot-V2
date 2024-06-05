@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "johnapi",
       script: "./dist/app.js",
-      cron_restart: "50 15 * * *",
+      cron_restart: "40 15 * * *",
     },
   ],
 };
