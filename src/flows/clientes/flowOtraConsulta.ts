@@ -1,4 +1,5 @@
 import { flowSiCliente } from "../flowCliente";
+import { flowNoCliente } from "../flowNoCliente";
 import { blackListFlow } from "../blacklistflow";
 import { IDLETIME, reset, start } from "../../idleCustom";
 import { addKeyword, EVENTS } from "@builderbot/bot";
@@ -38,6 +39,33 @@ export const flowOtraConsulta = addKeyword(EVENTS.ACTION)
       const resp = ctx.body;
       if (resp === "0") {
         return gotoFlow(flowSiCliente);
+      }
+      if (resp.length > 6) {
+        globalState.update({ readyForBL: true });
+        await flowDynamic(
+          "Perfecto, responderemos tu consulta cuanto antes. (cod#1500)"
+        );
+        return gotoFlow(FlowContinuar);
+      }
+      return fallBack(
+        "❌ Debe ingresar una consulta válida, por favor intente nuevamente."
+      );
+    }
+  );
+
+  export const flowOtraConsultaNoCliente = addKeyword(EVENTS.ACTION)
+  .addAnswer([
+    "Deje escrita su consulta y nos comunicaremos con usted a la brevedad.",
+    "*RECORDATORIO*: Nuestro horario de atención es de *8* a *16* hs",
+    "👉 *0* - Para cancelar",
+  ])
+  .addAnswer("*IMPORTANTE:* Por favor, adjunte su consulta en un solo mensaje")
+  .addAction(
+    { capture: true },
+    async (ctx, { gotoFlow, fallBack, globalState, flowDynamic }) => {
+      const resp = ctx.body;
+      if (resp === "0") {
+        return gotoFlow(flowNoCliente);
       }
       if (resp.length > 6) {
         globalState.update({ readyForBL: true });

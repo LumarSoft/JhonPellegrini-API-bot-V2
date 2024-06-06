@@ -1,6 +1,6 @@
-import { flowConsulta, flowContactoPendiente } from "./flowBienvenida";
+import { flowContactoPendiente } from "./flowBienvenida";
 import { blackListFlow } from "./blacklistflow";
-import { flowOtraConsulta } from "./clientes/flowOtraConsulta";
+import { flowOtraConsultaNoCliente } from "./clientes/flowOtraConsulta";
 import { addKeyword, EVENTS } from "@builderbot/bot";
 
 export const flowTipoCotizacionNoCliente = addKeyword(EVENTS.ACTION)
@@ -108,7 +108,7 @@ export const flowNoCliente = addKeyword(EVENTS.ACTION)
         case "2":
           return gotoFlow(flowContactoPendiente);
         case "3":
-          return gotoFlow(flowOtraConsulta);
+          return gotoFlow(flowOtraConsultaNoCliente);
         case "0":
           return endFlow("¡Nos vemos luego!");
         default:

@@ -2,7 +2,7 @@ import { blackListFlow } from "./flows/blacklistflow";
 import { continuacionCotizacion, flowCotizacionCliente, flowCotizarAp, flowCotizarAutomotor, flowCotizarComercio, flowCotizarHogar, flowCotizarOtrosRiesgos } from "./flows/clientes/flowCotizacion";
 import { flowConfirmacionCuponera, flowConfirmacionPoliza, flowCuponera, flowDocumentacion, flowPoliza } from "./flows/clientes/flowDocumentacion";
 import { flowGrua } from "./flows/clientes/flowGrua";
-import { FlowContinuar, flowOtraConsulta } from "./flows/clientes/flowOtraConsulta";
+import { FlowContinuar, flowOtraConsulta, flowOtraConsultaNoCliente } from "./flows/clientes/flowOtraConsulta";
 import { flowConsultaSiniestro, flowContinuacionSiniestro, flowDenunciaSiniestro, flowOtraConsultaSiniestro, flowSiniestro } from "./flows/clientes/flowSiniestro";
 import { flowBienvenida, flowConsulta, flowRechazoCreditoDebito, flowRechazoRapipago, flowRechazoTransferencia, flowContactoPendiente } from "./flows/flowBienvenida";
 import { flowSiCliente } from "./flows/flowCliente";
@@ -18,6 +18,7 @@ export const allFlows = [
   flowRechazoTransferencia,
   flowConsulta,
   flowNoCliente,
+  flowOtraConsultaNoCliente,
   flowContactoPendiente,
   flowCotizacionNoCliente,
   flowTipoCotizacionNoCliente,
