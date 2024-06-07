@@ -4,8 +4,8 @@ import { IDLETIME, reset, start } from "../../idleCustom";
 import { addKeyword, EVENTS } from "@builderbot/bot";
 
 export const flowGrua = addKeyword(EVENTS.ACTION)
-  .addAnswer("Si necesitas servicio de Auxilio mecánico o Grúa comunicarse al 08106660302.")
-  .addAnswer("Recordatorio: los vehículos con cobertura *A* (responsabilidad civil unicamente) y motos *NO poseen* servicio de Auxilio mecánico ni Grua.")
+  .addAnswer("Si necesita una grúa puede llamar al numero 08106660302.")
+  .addAnswer("Recordatorio: La cobertura A no posee asistencia de grúa.")
   .addAnswer([
     "👉 *1* - Volver al menú cliente.",
     "👉 *0* - Finalizar conversación.",

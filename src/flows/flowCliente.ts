@@ -10,8 +10,8 @@ import { addKeyword, EVENTS } from "@builderbot/bot";
 
 export const flowSiCliente = addKeyword(EVENTS.ACTION)
   .addAnswer([
-    "¡Gracias por comunicarte! ¿En que podemos asistirte?",
-    "*RECORDATORIO*: Nuestro horario de atención es de Lunes a Viernes de 8 a 16hs.",
+    "¿Que necesita?",
+    "*RECORDATORIO*: Nuestros horarios de atención son de 8 a 16hs",
   ])
   .addAnswer([
     "👉 *1* - Solicitud de documentación.",

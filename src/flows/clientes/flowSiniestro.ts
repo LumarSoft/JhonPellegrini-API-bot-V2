@@ -30,15 +30,12 @@ export const flowContinuacionSiniestro = addKeyword(EVENTS.ACTION)
 
 export const flowDenunciaSiniestro = addKeyword(EVENTS.ACTION)
   .addAnswer([
-    "A continuación le solicitamos la siguiente información:",
-    "DNI del titular de la Póliza",
-    "Patente si corresponde a un vehículo",
-    "Fecha y hora de ocurrencia",
-    "Breve descripción del siniestro.",
+    "A continuación deje la siguiente información",
+    "DNI del involucrado, Numero de póliza, Fecha del siniestro, Lugar del siniestro, Descripción del siniestro.",
     "👉 *0* - Cancelar",
   ])
   .addAnswer(
-    "*IMPORTANTE:* Por favor, adjunte todos los datos en un solo mensaje"
+    "*IMPORTANTE:* Porfavor adjunte todos los datos en un solo mensaje"
   )
   .addAction(
     { capture: true },
@@ -50,7 +47,7 @@ export const flowDenunciaSiniestro = addKeyword(EVENTS.ACTION)
       if (response.length > 3) {
         globalState.update({ readyForBL: true });
         await flowDynamic(
-          "¡Gracias! En breve nos comunicaremos para asesorarlo y realizar la denuncia correspondiente. Recuerde que la misma puede hacerse dentro de las 72 hs hábiles. (cod#1300)"
+          "Gracias, en breve nos comunicaremos con usted para la denuncia de su siniestro (cod#1300)"
         );
         return gotoFlow(flowContinuacionSiniestro);
       }
@@ -62,11 +59,7 @@ export const flowDenunciaSiniestro = addKeyword(EVENTS.ACTION)
 
 export const flowConsultaSiniestro = addKeyword(EVENTS.ACTION)
   .addAnswer([
-    "A continuación le solicitamos la siguiente información:",
-    "Referencia del siniestro a consultar",
-    "DNI del titular de la Póliza",
-    "Patente si corresponde a un vehículo",
-    "Fecha y consulta del siniestro.",
+    "A continuación deje el número de siniestro que quiere consultar.",
     "👉 *0* - Cancelar",
   ])
   .addAnswer(
@@ -93,12 +86,10 @@ export const flowConsultaSiniestro = addKeyword(EVENTS.ACTION)
   );
 
 export const flowOtraConsultaSiniestro = addKeyword(EVENTS.ACTION)
-  .addAnswer([
-    "Deje escrita su consulta y nos comunicaremos con usted a la brevedad.",
-    "*RECORDATORIO*: Nuestro horario de atención es de *8* a *16* hs",
-    "👉 *0* - Para cancelar",
-  ])
-  .addAnswer("*IMPORTANTE:* Por favor, adjunte su consulta en un solo mensaje")
+  .addAnswer(["Aqui iria otra consulta"])
+  .addAnswer(
+    "*IMPORTANTE:* Porfavor adjunte todos los datos en un solo mensaje"
+  )
   .addAction(
     { capture: true },
     async (ctx, { gotoFlow, globalState, flowDynamic }) => {

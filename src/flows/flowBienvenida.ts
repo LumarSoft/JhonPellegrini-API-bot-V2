@@ -1,39 +1,14 @@
 import { flowNoCliente } from "./flowNoCliente";
 import { flowSiCliente } from "./flowCliente";
-import { blackListFlow } from "./blacklistflow";
 import { addKeyword, EVENTS } from "@builderbot/bot";
 
-export const flowContactoPendiente = addKeyword(EVENTS.ACTION).addAnswer([
-  "Un representante se comunicará con usted a la brevedad. (cod#1600)",
-  "¿Desea realizar otra consulta?",
-  "👉 *1* - Volver al menu.",
-  "👉 *0* - Finalizar conversación.",
-])
-.addAction(
-  { capture: true },
-  async (ctx, { gotoFlow, fallBack, endFlow }) => {
-    const option = ctx.body;
-    switch (option) {
-      case "1":
-        return gotoFlow(flowNoCliente);
-      case "0":
-        // globalState.update({ readyForBL: true }); --necesario?
-        return gotoFlow(blackListFlow);
-      default:
-        return fallBack(
-          "❌ Opción no válida, por favor seleccione una opción válida."
-        );
-    }
-  }
-);
-
 export const flowConsulta = addKeyword(EVENTS.ACTION)
-  .addAnswer("¡Hola! Bienvenido a *John Pellegrini Management group SRL*.")
-  .addAnswer("Seleccione una de las siguientes opciones *ESCRIBIENDO EL NÚMERO* correspondiente.")
+  .addAnswer("Hola! Te comunicaste con JPMG.")
+  .addAnswer("*Elija el número de la opción que corresponda.*")
   .addAnswer([
-    "Para brindarte una mejor asistencia, necesitamos saber si eres cliente o no.",
-    "👉 *1* - Si, soy cliente.",
-    "👉 *2* - No, no soy cliente.",
+    "Necesitamos saber si sos cliente.",
+    "👉 *1* - Si.",
+    "👉 *2* - No.",
     "👉 *0* - Finalizar conversación.",
   ])
   .addAction(
