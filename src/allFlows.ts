@@ -35,13 +35,15 @@ import {
   flowRechazoTransferencia,
 } from "./flows/flowBienvenida";
 import { flowSiCliente } from "./flows/flowCliente";
+import { flowNoCliente } from "./flows/flowNoCliente";
+import { inactivityFlow } from "./flows/inactivityFlow";
 import {
   flowCotizacionOtrosRiesgosNoCliente,
   flowCotizacionVehiculoNoCliente,
-  flowNoCliente,
   flowTipoCotizacionNoCliente,
-} from "./flows/flowNoCliente";
-import { inactivityFlow } from "./flows/inactivityFlow";
+} from "./flows/noClientes/flowCotizacion";
+import { flowOtraConsultaNoCliente } from "./flows/noClientes/flowOtraConsulta";
+import { flowRepresentanteDeVentas } from "./flows/noClientes/flowRepresentante";
 import { idleFlow } from "./idleCustom";
 
 export const allFlows = [
@@ -55,6 +57,8 @@ export const allFlows = [
   flowTipoCotizacionNoCliente,
   flowCotizacionVehiculoNoCliente,
   flowCotizacionOtrosRiesgosNoCliente,
+  flowRepresentanteDeVentas,
+  flowOtraConsultaNoCliente,
   flowSiCliente,
   flowDocumentacion,
   flowPoliza,
