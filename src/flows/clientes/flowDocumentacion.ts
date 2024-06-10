@@ -53,7 +53,7 @@ export const flowConfirmacionCuponera = addKeyword(EVENTS.ACTION)
 
 export const flowPoliza = addKeyword(EVENTS.ACTION)
   .addAnswer([
-    "Por favor, deje el dni del titular o patente en caso de ser un vehículo.",
+    "Por favor, escribe a continuación el dni del titular de la poliza o patente del vehículo asegurado.",
     "👉 *0* - Para cancelar.",
   ])
   .addAnswer(
@@ -66,7 +66,7 @@ export const flowPoliza = addKeyword(EVENTS.ACTION)
       if (response === "0") {
         return gotoFlow(flowDocumentacion);
       }
-      if (response.length > 3) {
+      if (response.length > 5) {
         globalState.update({ readyForBL: true });
         return gotoFlow(flowConfirmacionPoliza);
       }
@@ -78,7 +78,7 @@ export const flowPoliza = addKeyword(EVENTS.ACTION)
 
 export const flowCuponera = addKeyword(EVENTS.ACTION)
   .addAnswer([
-    "Por favor deje el dni del titular o patente en caso de ser un vehículo.",
+    "Por favor, escribe a continuación el dni del titular de la poliza o patente del vehículo asegurado.",
     "👉 *0* - Para cancelar.",
   ])
   .addAnswer(

@@ -5,7 +5,7 @@ import { addKeyword, EVENTS } from "@builderbot/bot";
 
 export const flowGrua = addKeyword(EVENTS.ACTION)
   .addAnswer("Si necesita una grúa puede llamar al numero 08106660302.")
-  .addAnswer("Recordatorio: La cobertura A no posee asistencia de grúa.")
+  .addAnswer("Recordatorio: los vehículos con cobertura *A* (responsabilidad civil unicamente) y motos *NO poseen* servicio de Auxilio mecánico ni Grua.")
   .addAnswer([
     "👉 *1* - Volver al menú cliente.",
     "👉 *0* - Finalizar conversación.",

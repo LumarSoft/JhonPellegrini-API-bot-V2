@@ -3,12 +3,14 @@ import { flowSiCliente } from "./flowCliente";
 import { addKeyword, EVENTS } from "@builderbot/bot";
 
 export const flowConsulta = addKeyword(EVENTS.ACTION)
-  .addAnswer("Hola! Te comunicaste con JPMG.")
-  .addAnswer("*Elija el número de la opción que corresponda.*")
+  .addAnswer("¡Hola! Bienvenido a *John Pellegrini Management group SRL*")
+  .addAnswer(
+    "Seleccione una de las siguientes opciones *ESCRIBIENDO EL NUMERO* que corresponde"
+  )
   .addAnswer([
-    "Necesitamos saber si sos cliente.",
-    "👉 *1* - Si.",
-    "👉 *2* - No.",
+    "Para brindarte una mejor asistencia, necesitamos saber si eres cliente o no",
+    "👉 *1* - Si, soy cliente",
+    "👉 *2* - No, no soy cliente",
     "👉 *0* - Finalizar conversación.",
   ])
   .addAction(
