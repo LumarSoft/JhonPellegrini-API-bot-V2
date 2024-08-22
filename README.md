@@ -42,3 +42,206 @@ If you want to discover all the functions and features offered by the library yo
 ## Contact Us
 - [💻 Discord](https://link.codigoencasa.com/DISCORD)
 - [👌 𝕏 (Twitter)](https://twitter.com/leifermendez)
+```
+JhonPellegrini-API-bot-V2
+├─ .dockerignore
+├─ .eslintrc.json
+├─ .git
+│  ├─ COMMIT_EDITMSG
+│  ├─ config
+│  ├─ description
+│  ├─ FETCH_HEAD
+│  ├─ HEAD
+│  ├─ hooks
+│  │  ├─ applypatch-msg.sample
+│  │  ├─ commit-msg.sample
+│  │  ├─ fsmonitor-watchman.sample
+│  │  ├─ post-update.sample
+│  │  ├─ pre-applypatch.sample
+│  │  ├─ pre-commit.sample
+│  │  ├─ pre-merge-commit.sample
+│  │  ├─ pre-push.sample
+│  │  ├─ pre-rebase.sample
+│  │  ├─ pre-receive.sample
+│  │  ├─ prepare-commit-msg.sample
+│  │  ├─ push-to-checkout.sample
+│  │  ├─ sendemail-validate.sample
+│  │  └─ update.sample
+│  ├─ index
+│  ├─ info
+│  │  └─ exclude
+│  ├─ logs
+│  │  ├─ HEAD
+│  │  └─ refs
+│  │     ├─ heads
+│  │     │  ├─ carlitus-version
+│  │     │  └─ main
+│  │     └─ remotes
+│  │        └─ origin
+│  │           ├─ carlitus-version
+│  │           └─ HEAD
+│  ├─ objects
+│  │  ├─ 03
+│  │  │  └─ 86a597733720be4bd1f3f3b2ac4d947e87f9db
+│  │  ├─ 19
+│  │  │  └─ 6ebe0f1484835b65a6f65973f6f09a2dab8aa1
+│  │  ├─ 2c
+│  │  │  └─ 11bfc79ca439c3bbb24d0fcf3187bdd99bdf4b
+│  │  ├─ 49
+│  │  │  └─ e49fb54ed98612a68abc1c876e1833cdbccfb2
+│  │  ├─ a2
+│  │  │  └─ 2bbdd821d0b96465670aaa323085068b5d19f7
+│  │  ├─ info
+│  │  └─ pack
+│  │     ├─ pack-e9899314eaed2997158b396ad5128ce518201453.idx
+│  │     ├─ pack-e9899314eaed2997158b396ad5128ce518201453.pack
+│  │     └─ pack-e9899314eaed2997158b396ad5128ce518201453.rev
+│  ├─ ORIG_HEAD
+│  ├─ packed-refs
+│  └─ refs
+│     ├─ heads
+│     │  ├─ carlitus-version
+│     │  └─ main
+│     ├─ remotes
+│     │  └─ origin
+│     │     ├─ carlitus-version
+│     │     └─ HEAD
+│     └─ tags
+├─ .gitignore
+├─ assets
+│  └─ sample.png
+├─ Dockerfile
+├─ ecosystem.config.cjs
+├─ nodemon.json
+├─ package.json
+├─ pnpm-lock.yaml
+├─ README.md
+├─ rollup.config.js
+├─ src
+│  ├─ allFlows.ts
+│  ├─ app.ts
+│  ├─ flows
+│  │  ├─ blacklistflow.ts
+│  │  ├─ clientes
+│  │  │  ├─ flowCotizacion.ts
+│  │  │  ├─ flowDocumentacion.ts
+│  │  │  ├─ flowGrua.ts
+│  │  │  ├─ flowOtraConsulta.ts
+│  │  │  └─ flowSiniestro.ts
+│  │  ├─ flowBienvenida.ts
+│  │  ├─ flowCliente.ts
+│  │  ├─ flowNoCliente.ts
+│  │  ├─ inactivityFlow.ts
+│  │  └─ noClientes
+│  │     ├─ flowCotizacion.ts
+│  │     ├─ flowOtraConsulta.ts
+│  │     └─ flowRepresentante.ts
+│  ├─ idleCustom.ts
+│  └─ types
+│     ├─ contact.js
+│     └─ contact.ts
+└─ tsconfig.json
+
+```
+```
+JhonPellegrini-API-bot-V2
+├─ .dockerignore
+├─ .eslintrc.json
+├─ .git
+│  ├─ COMMIT_EDITMSG
+│  ├─ config
+│  ├─ description
+│  ├─ FETCH_HEAD
+│  ├─ HEAD
+│  ├─ hooks
+│  │  ├─ applypatch-msg.sample
+│  │  ├─ commit-msg.sample
+│  │  ├─ fsmonitor-watchman.sample
+│  │  ├─ post-update.sample
+│  │  ├─ pre-applypatch.sample
+│  │  ├─ pre-commit.sample
+│  │  ├─ pre-merge-commit.sample
+│  │  ├─ pre-push.sample
+│  │  ├─ pre-rebase.sample
+│  │  ├─ pre-receive.sample
+│  │  ├─ prepare-commit-msg.sample
+│  │  ├─ push-to-checkout.sample
+│  │  ├─ sendemail-validate.sample
+│  │  └─ update.sample
+│  ├─ index
+│  ├─ info
+│  │  └─ exclude
+│  ├─ logs
+│  │  ├─ HEAD
+│  │  └─ refs
+│  │     ├─ heads
+│  │     │  ├─ carlitus-version
+│  │     │  └─ main
+│  │     └─ remotes
+│  │        └─ origin
+│  │           ├─ carlitus-version
+│  │           └─ HEAD
+│  ├─ objects
+│  │  ├─ 03
+│  │  │  └─ 86a597733720be4bd1f3f3b2ac4d947e87f9db
+│  │  ├─ 19
+│  │  │  └─ 6ebe0f1484835b65a6f65973f6f09a2dab8aa1
+│  │  ├─ 2c
+│  │  │  └─ 11bfc79ca439c3bbb24d0fcf3187bdd99bdf4b
+│  │  ├─ 49
+│  │  │  └─ e49fb54ed98612a68abc1c876e1833cdbccfb2
+│  │  ├─ a2
+│  │  │  └─ 2bbdd821d0b96465670aaa323085068b5d19f7
+│  │  ├─ info
+│  │  └─ pack
+│  │     ├─ pack-e9899314eaed2997158b396ad5128ce518201453.idx
+│  │     ├─ pack-e9899314eaed2997158b396ad5128ce518201453.pack
+│  │     └─ pack-e9899314eaed2997158b396ad5128ce518201453.rev
+│  ├─ ORIG_HEAD
+│  ├─ packed-refs
+│  └─ refs
+│     ├─ heads
+│     │  ├─ carlitus-version
+│     │  └─ main
+│     ├─ remotes
+│     │  └─ origin
+│     │     ├─ carlitus-version
+│     │     └─ HEAD
+│     └─ tags
+├─ .gitignore
+├─ assets
+│  └─ sample.png
+├─ deleteBotSessions.js
+├─ Dockerfile
+├─ ecosystem.config.cjs
+├─ nodemon.json
+├─ package.json
+├─ pnpm-lock.yaml
+├─ README.md
+├─ rollup.config.js
+├─ src
+│  ├─ allFlows.ts
+│  ├─ app.ts
+│  ├─ flows
+│  │  ├─ blacklistflow.ts
+│  │  ├─ clientes
+│  │  │  ├─ flowCotizacion.ts
+│  │  │  ├─ flowDocumentacion.ts
+│  │  │  ├─ flowGrua.ts
+│  │  │  ├─ flowOtraConsulta.ts
+│  │  │  └─ flowSiniestro.ts
+│  │  ├─ flowBienvenida.ts
+│  │  ├─ flowCliente.ts
+│  │  ├─ flowNoCliente.ts
+│  │  ├─ inactivityFlow.ts
+│  │  └─ noClientes
+│  │     ├─ flowCotizacion.ts
+│  │     ├─ flowOtraConsulta.ts
+│  │     └─ flowRepresentante.ts
+│  ├─ idleCustom.ts
+│  └─ types
+│     ├─ contact.js
+│     └─ contact.ts
+└─ tsconfig.json
+
+```
