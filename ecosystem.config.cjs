@@ -8,7 +8,7 @@ module.exports = {
     {
       name: "delete-bot-sessions",
       script: "./deleteBotSessions.js",
-      cron_restart: "0 15 * * 1-5", // Ejecutar de lunes a viernes a las 15:00 hs
+      cron_restart: "30 15 * * 1-5", // Ejecutar de lunes a viernes a las 15:30 hs
       autorestart: false, // Evitar que PM2 lo reinicie automáticamente
     },
   ],
