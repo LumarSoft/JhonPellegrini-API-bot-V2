@@ -4,6 +4,11 @@ import { BaileysProvider as Provider } from "@builderbot/provider-baileys";
 import { Contact } from "./types/contact";
 import { allFlows } from "./allFlows";
 import cors from "cors";
+import { promisify } from 'util';
+import path from 'path';
+import fs from 'fs';
+
+
 
 const PORT = process.env.PORT ?? 3008;
 
@@ -18,7 +23,39 @@ const main = async () => {
     database: adapterDB,
   });
 
-  adapterProvider.server.use(cors({ origin: "*", methods: ["GET", "POST"] }));
+  adapterProvider.server.use(
+    cors({
+      origin: "*",
+      methods: ["GET", "POST"],
+      allowedHeaders: ["Content-Type", "Authorization"],
+    })
+  );
+
+  const expressApp = adapterProvider.server;
+
+  expressApp.get("/restart", async (req, res) => {
+    try {
+      // Ruta a la carpeta bot_sessions
+      const sessionPath = path.join(__dirname, '..', 'bot_sessions');
+      
+      // Eliminar la carpeta bot_sessions si existe
+      if (fs.existsSync(sessionPath)) {
+        const rmdir = promisify(fs.rm);
+        await rmdir(sessionPath, { recursive: true, force: true });
+        console.log('Carpeta bot_sessions eliminada exitosamente');
+      }
+
+      // Trigger a graceful restart using PM2
+      setTimeout(() => {
+        process.exit(0); // PM2 will automatically restart the process
+      }, 1000);
+      console.log("exito")
+      res.end("Bot restarting and sessions cleared...");
+    } catch (error) {
+      console.error("Error during bot restart:", error);
+      res.status(500).send("Failed to restart bot and clear sessions");
+    }
+  });
 
   adapterProvider.server.get("/funciona", (req, res) => res.end("Funciona"));
 
